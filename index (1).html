@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Epic Gift</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://paxta.online/js/paxtagram-web-app.js"></script>
+</head>
+<body>
+<div id="app">
+
+  <!-- HEADER -->
+  <header class="top">
+    <div class="user">
+      <div class="avatar" id="avatar">?</div>
+      <div class="bal"><span class="star">⭐</span><b id="bal">0</b></div>
+    </div>
+    <button class="deposit" id="depBtn">+ Deposit</button>
+  </header>
+
+  <!-- LIVE BAR -->
+  <div class="live"><div class="live-track" id="liveTrack"></div></div>
+
+  <main id="main">
+
+    <!-- HOME -->
+    <section class="view active" data-view="home">
+      <div class="big blue" data-go="rocket">
+        <div><h2>ROCKET</h2><p>Koeffitsientni tanla va yut!</p></div><span class="ico">🚀</span>
+      </div>
+      <div class="big yellow" data-go="pvp">
+        <div><h2>PVP</h2><p>O'yinchilarga qarshi</p></div><span class="ico">⚔️</span>
+      </div>
+      <div class="big purple" data-go="hub">
+        <div><h2>PLAY HUB</h2><p>Mines, Keys va boshqalar</p></div><span class="ico">🎮</span>
+      </div>
+    </section>
+
+    <!-- ROCKET -->
+    <section class="view" data-view="rocket">
+      <button class="back" data-go="home">← Orqaga</button>
+      <h3 class="title">🚀 Rocket</h3>
+      <div class="stage" id="rkStage">
+        <div class="mult" id="rkMult">1.00x</div>
+        <div class="ship" id="rkShip">🚀</div>
+      </div>
+      <label>Stavka (⭐)</label>
+      <input type="number" id="rkBet" value="10" min="1" inputmode="numeric">
+      <label>Chiqarib olish koeffitsienti (x)</label>
+      <input type="number" id="rkTarget" value="2" min="1.01" step="0.01" inputmode="decimal">
+      <button class="btn blue" id="rkGo">Uchirish</button>
+      <p class="hint" id="rkInfo"></p>
+    </section>
+
+    <!-- PVP -->
+    <section class="view" data-view="pvp">
+      <button class="back" data-go="home">← Orqaga</button>
+      <h3 class="title">⚔️ PVP</h3>
+      <div class="card center"><p>Tez orada!</p></div>
+    </section>
+
+    <!-- PLAY HUB -->
+    <section class="view" data-view="hub">
+      <button class="back" data-go="home">← Orqaga</button>
+      <h3 class="title">🎮 Play Hub</h3>
+      <div class="tiles">
+        <div class="tile" data-go="mines"><span>💎</span><b>Mines</b></div>
+        <div class="tile" data-go="keys"><span>🔑</span><b>Keys</b></div>
+      </div>
+    </section>
+
+    <!-- MINES -->
+    <section class="view" data-view="mines">
+      <button class="back" data-go="hub">← Orqaga</button>
+      <h3 class="title">💎 Mines</h3>
+      <div id="mSetup">
+        <label>Stavka (⭐)</label>
+        <input type="number" id="mBet" value="10" min="1" inputmode="numeric">
+        <label>Minalar soni</label>
+        <select id="mCount"></select>
+        <button class="btn purple" id="mStart">Boshlash</button>
+      </div>
+      <div id="mInfo" class="minfo" hidden></div>
+      <div class="mgrid" id="mGrid"></div>
+      <button class="btn green" id="mCash" hidden>Yechib olish</button>
+      <p class="hint" id="mMsg"></p>
+    </section>
+
+    <!-- KEYS -->
+    <section class="view" data-view="keys">
+      <button class="back" data-go="hub">← Orqaga</button>
+      <h3 class="title">🔑 Keys</h3>
+      <div class="kgrid" id="keysList"></div>
+    </section>
+
+    <!-- BACKPACK -->
+    <section class="view" data-view="backpack">
+      <h3 class="title">🎒 Backpack</h3>
+      <h4>🎁 Giftlar</h4>
+      <div id="giftList" class="list"></div>
+      <h4>🧾 Tarix</h4>
+      <div id="history" class="list"></div>
+    </section>
+
+    <!-- INVITE -->
+    <section class="view" data-view="invite">
+      <h3 class="title">👥 Do'stlarni taklif qil</h3>
+      <div class="card">
+        <p id="invText">Har bir yangi do'st uchun bonus oling.</p>
+        <input type="text" id="invLink" readonly>
+        <button class="btn green" id="invCopy">Havolani nusxalash</button>
+      </div>
+    </section>
+
+    <!-- LEADERBOARD -->
+    <section class="view" data-view="leaderboard">
+      <h3 class="title">🏆 Leaderboard</h3>
+      <p class="hint" id="lbInfo"></p>
+      <div id="lbList" class="list"></div>
+    </section>
+
+    <!-- EARN -->
+    <section class="view" data-view="earn">
+      <h3 class="title">💰 Earn</h3>
+      <div class="card">
+        <h4>⭐ Stars bilan to'ldirish</h4>
+        <div class="chips">
+          <button class="chip" data-dep="10">10</button>
+          <button class="chip" data-dep="50">50</button>
+          <button class="chip" data-dep="100">100</button>
+          <button class="chip" data-dep="500">500</button>
+        </div>
+        <input type="number" id="depAmount" placeholder="Boshqa summa" min="1" inputmode="numeric">
+        <button class="btn green" id="depGo">To'ldirish</button>
+      </div>
+      <div id="adminBox" hidden></div>
+    </section>
+
+  </main>
+
+  <!-- BOTTOM NAV -->
+  <nav class="bottom">
+    <button data-go="backpack"><span>🎒</span><i>Backpack</i></button>
+    <button data-go="invite"><span>👥</span><i>Invite</i></button>
+    <button data-go="home" class="on"><span>🏠</span><i>Home</i></button>
+    <button data-go="leaderboard"><span>🏆</span><i>Leaderboard</i></button>
+    <button data-go="earn"><span>💰</span><i>Earn</i></button>
+  </nav>
+
+  <div id="modal"></div>
+  <div id="toast"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
