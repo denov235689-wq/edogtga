@@ -780,6 +780,7 @@
     if (!url) return;
     try {
       // PaxtaGram ichida profilni to'g'ridan-to'g'ri ochadi (brauzerga chiqmaydi)
+      if (tg && tg.openPaxtaGramLink) { tg.openPaxtaGramLink(url); return; }
       if (tg && tg.openTelegramLink) { tg.openTelegramLink(url); return; }
       if (tg && tg.openLink) { tg.openLink(url); return; }
     } catch (e) { /* pastga */ }
