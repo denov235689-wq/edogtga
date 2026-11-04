@@ -6,80 +6,224 @@
   <title>Epic Gift</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://paxta.online/js/paxtagram-web-app.js"></script>
 </head>
 <body>
 <div id="app">
 
-  <!-- HEADER -->
+  <!-- ============ HEADER ============ -->
   <header class="top">
     <div class="user">
-      <div class="avatar" id="avatar">?</div>
-      <div class="bal"><span class="star">⭐</span><b id="bal">0</b></div>
+      <div class="avatar-wrap">
+        <div class="avatar" id="avatar">?</div>
+        <span class="avatar-badge"><svg viewBox="0 0 24 24" width="12" height="12"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z" fill="#fff"/></svg></span>
+      </div>
+      <div class="balbox">
+        <small>Balansingiz</small>
+        <div class="bal">
+          <svg class="star-ico" viewBox="0 0 24 24" width="24" height="24"><defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe27a"/><stop offset="1" stop-color="#ffa21a"/></linearGradient></defs><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z" fill="url(#sg)"/></svg>
+          <b id="bal">0</b>
+        </div>
+      </div>
     </div>
-    <button class="deposit" id="depBtn">+ Deposit</button>
+    <button class="deposit" id="depBtn">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h12v4"/><path d="M3 7v11a2 2 0 0 0 2 2h14a1 1 0 0 0 1-1v-3"/><path d="M21 10h-5a2 2 0 0 0 0 4h5z"/></svg>
+      Deposit
+    </button>
   </header>
 
-  <!-- LIVE BAR -->
-  <div class="live"><div class="live-track" id="liveTrack"></div></div>
+  <!-- ============ LIVE ============ -->
+  <div class="live">
+    <div class="live-label"><i class="dot"></i><span>Live</span></div>
+    <div class="live-wrap"><div class="live-track" id="liveTrack"></div></div>
+  </div>
 
   <main id="main">
 
-    <!-- HOME -->
+    <!-- ============ HOME ============ -->
     <section class="view active" data-view="home">
-      <div class="big blue" data-go="rocket">
-        <div><h2>ROCKET</h2><p>Koeffitsientni tanla va yut!</p></div><span class="ico">🚀</span>
+
+      <div class="big rocket-card" data-go="rocket">
+        <span class="tag blue"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>HOT</span>
+        <h2><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c-1 0-2-1-2-2 0-2 2-3 3-3l3 3c0 1-1 3-3 3z"/><path d="M9 15l-3-3 6-7c3-3 7-3 9-3 0 2 0 6-3 9l-7 6"/><circle cx="15" cy="9" r="1.5"/></svg>ROCKET</h2>
+        <div class="art rk-art">
+          <i class="xl x1">x3.05</i><i class="xl x2">x2.00</i><i class="xl x3">x2.92</i><i class="xl x4">x1.14</i>
+          <i class="plane p1"></i><i class="plane p2"></i>
+          <svg class="rocket-svg" viewBox="0 0 120 172">
+            <defs><linearGradient id="flm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff3b0"/><stop offset="1" stop-color="#ff7a00"/></linearGradient></defs>
+            <path class="flame" d="M60 126C46 138 50 160 60 170C70 160 74 138 60 126Z" fill="url(#flm)"/>
+            <path d="M34 90L10 128L37 118Z" fill="#e5383b"/><path d="M86 90L110 128L83 118Z" fill="#e5383b"/>
+            <path d="M60 4C88 26 92 78 85 122H35C28 78 32 26 60 4Z" fill="#fff"/>
+            <path d="M60 4C73 15 81 30 84 46H36C39 30 47 15 60 4Z" fill="#e5383b"/>
+            <circle cx="60" cy="76" r="14" fill="#3b82f6" stroke="#dbeafe" stroke-width="4"/>
+            <rect x="45" y="122" width="30" height="9" rx="3" fill="#94a3b8"/>
+          </svg>
+        </div>
       </div>
-      <div class="big yellow" data-go="pvp">
-        <div><h2>PVP</h2><p>O'yinchilarga qarshi</p></div><span class="ico">⚔️</span>
+
+      <div class="big pvp-card" data-go="pvp">
+        <span class="tag orange"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>NEW</span>
+        <h2><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 17.5L3 6V3h3l11.5 11.5"/><path d="M13 19l6-6"/><path d="M16 16l4 4"/><path d="M19 21l2-2"/><path d="M9.5 6.5L21 18v3h-3L6.5 9.5"/></svg>PVP HUB</h2>
+        <div class="art pvp-art">
+          <div class="duo solo"><span class="crown">👑</span><div class="avs"><i>🐱</i><b>🧑</b><i>🥊</i></div><em>SOLO</em></div>
+          <div class="duo team"><div class="half bl"></div><div class="half rd"></div><span class="vs">VS</span><em>TEAM</em></div>
+        </div>
       </div>
-      <div class="big purple" data-go="hub">
-        <div><h2>PLAY HUB</h2><p>Mines, Keys va boshqalar</p></div><span class="ico">🎮</span>
+
+      <div class="big hub-card" data-go="hub">
+        <span class="tag purple"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></svg>NEW</span>
+        <h2><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M6 12h4M8 10v4"/><circle cx="15" cy="11" r="1"/><circle cx="18" cy="13" r="1"/></svg>PLAY HUB</h2>
+        <div class="art hub-art">
+          <div class="mini g"><b>💎</b><em>Mines</em></div>
+          <div class="mini r"><b>🔑</b><em>Keys</em></div>
+          <div class="mini p"><b class="pegs"><i></i><i></i><i></i><i></i><i></i><i></i></b><em>Plinko</em></div>
+        </div>
       </div>
+
     </section>
 
-    <!-- ROCKET -->
+    <!-- ============ ROCKET ============ -->
     <section class="view" data-view="rocket">
       <button class="back" data-go="home">← Orqaga</button>
-      <h3 class="title">🚀 Rocket</h3>
-      <div class="stage" id="rkStage">
+      <div class="stage">
+        <canvas id="rkCanvas"></canvas>
         <div class="mult" id="rkMult">1.00x</div>
-        <div class="ship" id="rkShip">🚀</div>
+        <div class="stage-status" id="rkStatus">Stavka qo'ying va raketani uchiring</div>
       </div>
-      <label>Stavka (⭐)</label>
-      <input type="number" id="rkBet" value="10" min="1" inputmode="numeric">
-      <label>Chiqarib olish koeffitsienti (x)</label>
-      <input type="number" id="rkTarget" value="2" min="1.01" step="0.01" inputmode="decimal">
-      <button class="btn blue" id="rkGo">Uchirish</button>
+      <div id="rkSetup" class="panel">
+        <div class="seg" data-seg="rk"><button class="on" data-mode="stars">⭐ Stars</button><button data-mode="gift">🎁 Gift</button></div>
+        <div id="rkStars">
+          <label>Stavka</label>
+          <div class="inrow"><input type="number" id="rkBet" value="10" min="1" inputmode="numeric"><div class="quick" data-for="rkBet"><button data-op="half">½</button><button data-op="double">2×</button><button data-op="max">Max</button></div></div>
+        </div>
+        <div id="rkGift" hidden>
+          <label>Gift tanlang (narx × koeffitsient = yutuq)</label>
+          <select id="rkGiftSel"></select>
+        </div>
+        <label>Avto yechish (x), ixtiyoriy</label>
+        <input type="number" id="rkTarget" placeholder="Bo'sh = o'zim yechaman" min="1.01" step="0.01" inputmode="decimal">
+        <button class="btn blue" id="rkGo">🚀 Uchirish</button>
+      </div>
+      <button class="btn green pulse" id="rkCash" hidden>Yechib olish</button>
       <p class="hint" id="rkInfo"></p>
     </section>
 
-    <!-- PVP -->
+    <!-- ============ PVP ============ -->
     <section class="view" data-view="pvp">
       <button class="back" data-go="home">← Orqaga</button>
-      <h3 class="title">⚔️ PVP</h3>
-      <div class="card center"><p>Tez orada!</p></div>
+      <div class="pvarena">
+        <div class="pvwheel" id="pvWheel">
+          <div id="pvLabs"></div>
+          <div class="pvhub"><span id="pvHubTxt">⏳</span></div>
+          <div class="pvball" id="pvBall" hidden></div>
+        </div>
+      </div>
+      <div class="pvpills">
+        <div class="pill"><em class="pe top">TOP</em><span id="pvTop">—</span></div>
+        <div class="pill"><em class="pe last">OXIRGI</em><span id="pvLast">—</span></div>
+      </div>
+      <div class="pvhash">Round hash: <b id="pvHash">—</b><button id="pvCopy" aria-label="Nusxalash">⧉</button></div>
+      <div class="pvhead2"><span>O'YINCHILAR <b id="pvCnt">0</b></span><span>O'YIN <b id="pvId">#0</b></span></div>
+      <div id="pvPlayers" class="pvplayers"></div>
+      <div class="panel">
+        <label>Stavka</label>
+        <div class="inrow"><input type="number" id="pvBet" value="50" min="50" inputmode="numeric"><div class="quick" data-for="pvBet"><button data-op="half">½</button><button data-op="double">2×</button><button data-op="max">Max</button></div></div>
+        <div class="pvchance" id="pvChance"></div>
+        <button class="btn yellow" id="pvGo">Stavka qo'yish</button>
+        <button class="btn ghost" id="pvCancel" hidden>Stavkamni qaytarish</button>
+        <p class="hint" id="pvInfo"></p>
+      </div>
+      <details class="how"><summary>ⓘ How it works</summary>
+        <p>Har raundda <b>Epic bot</b> o'zi stavka qo'yadi. Siz stavka qo'ysangiz <b>10 soniyalik hisoblagich</b> boshlanadi, shu vaqtda boshqalar ham qo'shilishi mumkin. Hisoblagich tugagach to'p g'ildirak o'rtasidan tashlanadi va aylanib birovga tushadi. <b>Kim ko'p tiksa, g'ildirakda shuncha katta joy egallaydi</b>.</p>
+        <p>Raund hash: natija raund boshida belgilab qo'yiladi (<code>sha256(seed)</code>). Raund tugagach <code>seed</code> ochiladi va hash bilan tekshirish mumkin.</p>
+      </details>
     </section>
 
-    <!-- PLAY HUB -->
+    <!-- ============ PLAY HUB ============ -->
     <section class="view" data-view="hub">
       <button class="back" data-go="home">← Orqaga</button>
       <h3 class="title">🎮 Play Hub</h3>
+      <div class="upcard" data-go="upgrade">
+        <span class="tag hot"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 3 4 5 4 9a4 4 0 0 1-8 0c0-2 1-3 2-4 0 2 1 2 1.5 2C11 8 11 5 12 3z"/></svg>HOT</span>
+        <h2>Upgrade</h2>
+        <p>Orzu giftingizni tanlang</p>
+        <div class="upart"><div class="upwheel mini" style="--p:15"><div class="upring"></div><div class="upgift">💖</div><i class="uparrowwrap" style="transform:rotate(58deg)"><i class="uparrow"></i></i></div><b class="uppct">15%</b></div>
+      </div>
       <div class="tiles">
-        <div class="tile" data-go="mines"><span>💎</span><b>Mines</b></div>
-        <div class="tile" data-go="keys"><span>🔑</span><b>Keys</b></div>
+        <div class="tile g" data-go="mines"><b>💎</b><em>Mines</em><small>Minalarni aylanib o'ting</small></div>
+        <div class="tile r" data-go="keys"><b>🔑</b><em>Keys</em><small>Keys oching, mukofot oling</small></div>
+        <div class="tile p wide" data-go="plinko"><b class="pegs"><i></i><i></i><i></i><i></i><i></i><i></i></b><em>Plinko</em><small>Shar tashlang, koeffitsient oling</small></div>
       </div>
     </section>
 
-    <!-- MINES -->
+    <!-- ============ UPGRADE ============ -->
+    <section class="view" data-view="upgrade">
+      <button class="back" data-go="hub">← Orqaga</button>
+      <h3 class="title">⬆️ Upgrade</h3>
+      <div class="uprow">
+        <div class="upwheel" id="upWheel" style="--p:0">
+          <div class="upring"></div>
+          <div class="upgift" id="upCenter">🎁</div>
+          <div class="uparrowwrap" id="upArrowWrap"><i class="uparrow"></i></div>
+        </div>
+        <div class="uppctlabel" id="upPct">0%</div>
+      </div>
+      <div class="panel">
+        <label>Sizning stavkangiz</label>
+        <div class="seg" data-seg="up"><button class="on" data-mode="stars">⭐ Stars</button><button data-mode="gift">🎁 Gift</button></div>
+        <div id="upStars"><input type="number" id="upBet" value="100" min="1" inputmode="numeric"></div>
+        <div id="upGift" hidden><select id="upGiftSel"></select></div>
+        <label>Orzu gifti (narxiga qarab shans hisoblanadi)</label>
+        <div class="market" id="upMarket"></div>
+        <button class="btn green" id="upGo">⬆️ Upgrade</button>
+        <p class="hint" id="upInfo">Orzu giftini tanlang</p>
+      </div>
+      <div id="upRes"></div>
+    </section>
+
+    <!-- ============ PLINKO ============ -->
+    <section class="view" data-view="plinko">
+      <button class="back" data-go="hub">← Orqaga</button>
+      <h3 class="title">🔮 Plinko</h3>
+      <div class="plwrap"><canvas id="plCanvas"></canvas></div>
+      <div class="pllast" id="plLast"></div>
+      <div class="panel">
+        <div class="seg" data-seg="pl"><button class="on" data-mode="stars">⭐ Stars</button><button data-mode="gift">🎁 Gift</button></div>
+        <div id="plStars">
+          <label>Stavka</label>
+          <div class="inrow"><input type="number" id="plBet" value="10" min="1" inputmode="numeric"><div class="quick" data-for="plBet"><button data-op="half">½</button><button data-op="double">2×</button><button data-op="max">Max</button></div></div>
+        </div>
+        <div id="plGift" hidden>
+          <label>Gift tanlang</label>
+          <select id="plGiftSel"></select>
+        </div>
+        <div class="row2">
+          <div><label>Qatorlar</label><select id="plRows"></select></div>
+          <div><label>Xavf</label>
+            <div class="seg small" id="plRisk"><button data-risk="low">Past</button><button class="on" data-risk="mid">O'rta</button><button data-risk="high">Yuqori</button></div>
+          </div>
+        </div>
+        <button class="btn purple" id="plDrop">🔮 Shar tashlash</button>
+        <p class="hint" id="plInfo"></p>
+      </div>
+    </section>
+
+    <!-- ============ MINES ============ -->
     <section class="view" data-view="mines">
       <button class="back" data-go="hub">← Orqaga</button>
       <h3 class="title">💎 Mines</h3>
-      <div id="mSetup">
-        <label>Stavka (⭐)</label>
-        <input type="number" id="mBet" value="10" min="1" inputmode="numeric">
+      <div id="mSetup" class="panel">
+        <div class="seg" data-seg="m"><button class="on" data-mode="stars">⭐ Stars</button><button data-mode="gift">🎁 Gift</button></div>
+        <div id="mStars">
+          <label>Stavka</label>
+          <div class="inrow"><input type="number" id="mBet" value="10" min="1" inputmode="numeric"><div class="quick" data-for="mBet"><button data-op="half">½</button><button data-op="double">2×</button><button data-op="max">Max</button></div></div>
+        </div>
+        <div id="mGift" hidden>
+          <label>Gift tanlang</label>
+          <select id="mGiftSel"></select>
+        </div>
         <label>Minalar soni</label>
         <select id="mCount"></select>
         <button class="btn purple" id="mStart">Boshlash</button>
@@ -90,44 +234,19 @@
       <p class="hint" id="mMsg"></p>
     </section>
 
-    <!-- KEYS -->
+    <!-- ============ KEYS ============ -->
     <section class="view" data-view="keys">
       <button class="back" data-go="hub">← Orqaga</button>
       <h3 class="title">🔑 Keys</h3>
       <div class="kgrid" id="keysList"></div>
     </section>
 
-    <!-- BACKPACK -->
-    <section class="view" data-view="backpack">
-      <h3 class="title">🎒 Backpack</h3>
-      <h4>🎁 Giftlar</h4>
-      <div id="giftList" class="list"></div>
-      <h4>🧾 Tarix</h4>
-      <div id="history" class="list"></div>
-    </section>
+    <!-- ============ DEPOSIT ============ -->
+    <section class="view" data-view="deposit">
+      <h3 class="title">💳 Deposit</h3>
+      <div class="tabs" id="depTabs"><button class="on" data-tab="stars">⭐ Stars</button><button data-tab="gift">🎁 Gift</button></div>
 
-    <!-- INVITE -->
-    <section class="view" data-view="invite">
-      <h3 class="title">👥 Do'stlarni taklif qil</h3>
-      <div class="card">
-        <p id="invText">Har bir yangi do'st uchun bonus oling.</p>
-        <input type="text" id="invLink" readonly>
-        <button class="btn green" id="invCopy">Havolani nusxalash</button>
-      </div>
-    </section>
-
-    <!-- LEADERBOARD -->
-    <section class="view" data-view="leaderboard">
-      <h3 class="title">🏆 Leaderboard</h3>
-      <p class="hint" id="lbInfo"></p>
-      <div id="lbList" class="list"></div>
-    </section>
-
-    <!-- EARN -->
-    <section class="view" data-view="earn">
-      <h3 class="title">💰 Earn</h3>
-      <div class="card">
-        <h4>⭐ Stars bilan to'ldirish</h4>
+      <div id="depStars" class="panel">
         <div class="chips">
           <button class="chip" data-dep="10">10</button>
           <button class="chip" data-dep="50">50</button>
@@ -135,20 +254,76 @@
           <button class="chip" data-dep="500">500</button>
         </div>
         <input type="number" id="depAmount" placeholder="Boshqa summa" min="1" inputmode="numeric">
-        <button class="btn green" id="depGo">To'ldirish</button>
+        <button class="btn green" id="depGo">Stars bilan to'ldirish</button>
+      </div>
+
+      <div id="depGift" hidden>
+        <div class="giftcta">
+          <p id="giftDepText"></p>
+          <button class="btn cta" id="giftSend">🎁 Gift yuborish</button>
+        </div>
+        <div class="sechead"><h4>Gift narxlari</h4><span id="giftDepSub"></span></div>
+        <div class="market" id="giftMarket"></div>
+        <div class="sechead"><h4>Yangi kelgan giftlaringiz</h4></div>
+        <div class="gifts" id="depMyGifts"></div>
+      </div>
+    </section>
+
+    <!-- ============ BACKPACK ============ -->
+    <section class="view" data-view="backpack">
+      <h3 class="title">🎒 Backpack</h3>
+      <div class="sechead"><h4>Mening giftlarim</h4><span id="bpHint"></span></div>
+      <div class="gifts" id="myGifts"></div>
+      <div class="sechead"><h4>Gift do'koni</h4></div>
+      <div id="giftList" class="list"></div>
+      <div class="sechead"><h4>Tarix</h4></div>
+      <div id="history" class="list"></div>
+    </section>
+
+    <!-- ============ INVITE ============ -->
+    <section class="view" data-view="invite">
+      <h3 class="title">👥 Do'stlarni taklif qil</h3>
+      <div class="panel">
+        <p id="invText">Har bir yangi do'st uchun bonus oling.</p>
+        <input type="text" id="invLink" readonly>
+        <button class="btn green" id="invCopy">Havolani nusxalash</button>
+      </div>
+    </section>
+
+    <!-- ============ LEADERBOARD ============ -->
+    <section class="view" data-view="leaderboard">
+      <h3 class="title">🏆 Leaderboard</h3>
+      <p class="hint" id="lbInfo"></p>
+      <div id="lbList" class="list"></div>
+    </section>
+
+    <!-- ============ EARN ============ -->
+    <section class="view" data-view="earn">
+      <h3 class="title">💰 Earn</h3>
+      <div class="panel promo">
+        <h4 style="margin-top:0">🎟 Promo kod</h4>
+        <div class="inrow">
+          <input type="text" id="promoCode" placeholder="Promo kodni kiriting" maxlength="32" autocomplete="off" autocapitalize="characters" style="text-transform:uppercase">
+          <button class="btn green" id="promoGo" style="width:auto;padding:13px 16px;margin:6px 0 12px">Faollashtirish</button>
+        </div>
+        <p class="hint" id="promoMsg"></p>
+      </div>
+      <div class="tiles">
+        <div class="tile g" data-go="deposit"><b>💳</b><em>Deposit</em><small>Stars yoki gift bilan</small></div>
+        <div class="tile p" data-go="invite"><b>👥</b><em>Invite</em><small>Do'st taklif qiling</small></div>
       </div>
       <div id="adminBox" hidden></div>
     </section>
 
   </main>
 
-  <!-- BOTTOM NAV -->
+  <!-- ============ BOTTOM NAV ============ -->
   <nav class="bottom">
-    <button data-go="backpack"><span>🎒</span><i>Backpack</i></button>
-    <button data-go="invite"><span>👥</span><i>Invite</i></button>
-    <button data-go="home" class="on"><span>🏠</span><i>Home</i></button>
-    <button data-go="leaderboard"><span>🏆</span><i>Leaderboard</i></button>
-    <button data-go="earn"><span>💰</span><i>Earn</i></button>
+    <button data-go="backpack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6V5a4 4 0 0 1 8 0v1"/><rect x="4" y="6" width="16" height="15" rx="4"/><path d="M9 14h6"/></svg><i>Backpack</i></button>
+    <button data-go="invite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M17 5a3.5 3.5 0 0 1 0 6.5M18.5 14.3c2 .8 3 2.6 3 5.7"/></svg><i>Invite</i></button>
+    <button data-go="home" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><i>Home</i></button>
+    <button data-go="leaderboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg><i>Leaderboard</i></button>
+    <button data-go="earn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.5 9a2.5 2 0 0 0-2.5-1.5c-1.4 0-2.5.8-2.5 2s1 1.7 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2A2.5 2 0 0 1 9.5 15M12 6v1.5M12 16.5V18"/></svg><i>Earn</i></button>
   </nav>
 
   <div id="modal"></div>
